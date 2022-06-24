@@ -17,7 +17,7 @@ def maxPtsOnLine(arr2d):
                     elif(arr2d[i+1][j] - arr2d[i][j] == 0):
                         distance_x = arr2d[i+1][j] - arr2d[i][j]
                         print('on the same x axis')
-                    # check whether it;s going left, neg x
+                    # check whether it's going left, neg x
                     else:
                         distance_x = arr2d[i+1][j] - arr2d[i][j]
                         print('going left, neg x')
@@ -83,3 +83,4 @@ print(maxPtsOnLine([[1, 1],[2, 2],[2, 3],[3, 3],[3, 5]]))
 #     return count
     
 # print(solution3([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]))
+print(maxPtsOnLine([[1,1], [2,2], [3,3], [3,4],[5,5]]))
