@@ -1,35 +1,73 @@
-def shifted_binary_search(target, shifted_arr):
-    
-    left = 0
-    right = len(shifted_arr)-1
-    
-    while(left <= right):
-        mid = (left+right) // 2
-        if shifted_arr[mid] == target:
-            return mid
-        # target in 'not shifted zone'
-        elif shifted_arr[mid] > shifted_arr[left]:
-            if target < shifted_arr[mid] & target >= shifted_arr[left]:
-                right = mid - 1
+def search(nums, target: int) -> int:
+        
+        if(len(nums)) < 1:
+            return -1
+        
+        if(len(nums) == 1 and nums[0] == target):
+            return 0
+        
+        if(target == nums[len(nums)-1]):
+            return len(nums) -1 
+        
+        if target == nums[0]:
+            return 0
+        left = 0
+        right = len(nums) -1
+        p = 0
+        arr = []  #array that contains the target
+        
+        # Find pivot
+        # while left < right:
+            
+        #     middle = (left + (right - left)) // 2
+            
+        #     if(nums[middle] > nums[right]):
+        #         left = middle + 1
+        #     else:
+        #         right = middle
+
+        for i in range(len(nums)-1):
+            if nums[i+1] < nums[i]:
+                p = i
+        
+        print(p)
+        # to check which array to binary search
+        # target at left array
+        # if(nums[0] > nums[len(nums)-1]):
+        #     if(target > nums[p] & target > nums[left]):
+        #         right = p     
+        #     # target at right array
+        #     else:
+        #         left = p+ 1
+
+        # else:
+        #     if(target > nums[p] & target > nums[left]):
+        #         left = p + 1
+        #         print(left)
+        
+        #     else:
+        #         right = p
+
+        
+            
+            
+            
+        while left <= right:
+            print(left, right)
+            middle = (left + right) // 2
+
+            
+            
+            if(nums[middle] == target):
+                return middle
+            
+        
+            if(nums[middle] > target):
+                right = middle - 1
             else:
-                left = mid + 1
-                
-        # target in shifted zone 
-        else:
-            if target > shifted_arr[mid] & target <= shifted_arr[right]:
-                left = mid + 1
-            else:
-                right - mid - 1
-
-    return -1
-    
-
-
-
-print(shifted_binary_search(21, [9,19,21,2,5]))
-print(shifted_binary_search(14, [2,3,5,6,7,14,0,1]))
-    
-
-
-
-
+                left = middle + 1                          
+            
+        
+        return -1
+            
+print(search([1,3,5],3))

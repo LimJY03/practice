@@ -2,8 +2,6 @@ from math import floor
 
 
 
-
-
 def maxPtsOnLine(arr2d):
     count = 0
     for i in range(len(arr2d)-1):
