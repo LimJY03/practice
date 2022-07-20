@@ -45,5 +45,28 @@ class BuiltIn:
     help(abs) #prints the description of the method
     print(findAbs(-155))
 
+# Define a Python function Studentent(). Using function attributes display the names of all arguments.
+class Student:
+    def Studentent(id, name, school, classroom):
+        return f'{name}\'s Studentent id is {id}. He Studenties in {school} and he belongs to {classroom}.'
+    
+    print(Studentent('D3638', 'Kingston', 'Imperial London College', 'F4T01A'))
 
+# 6. Write a Python function Studentent_data () which will print the id of a Studentent (Studentent_id). If the user passes an argument Studentent_name or 
+# Studentent_class the function will print the Studentent name and class
+class Kwargs:
+    def Studentent_data(id, **kwargs):
+        sentence = f'Studentent ID: {id}'
+        if 'name' in kwargs:
+            return sentence.join(f"\nStudentent Name: ${kwargs['name']}")
+        if 'age' in kwargs:
+            return sentence.join(f"\nStudentent Age: ${kwargs['age']}")
 
+        return sentence
+    print(Studentent_data('D3727', name='JK Rowling', age='16'))
+
+# Write a simple Python class named Studentent and display its type. Also, display the 
+# __dict__ attribute keys and the value of the __module__ attribute of the Studentent class
+class Student(Student):
+    print(type(Student), Student.__dict__.keys(), Student.__module__)
+    
