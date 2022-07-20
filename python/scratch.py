@@ -54,6 +54,7 @@ class Student:
 
 # 6. Write a Python function Studentent_data () which will print the id of a Studentent (Studentent_id). If the user passes an argument Studentent_name or 
 # Studentent_class the function will print the Studentent name and class
+# !!!!DEBUG REQUIRED
 class Kwargs:
     def Studentent_data(id, **kwargs):
         sentence = f'Studentent ID: {id}'
