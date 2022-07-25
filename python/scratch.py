@@ -47,27 +47,42 @@ class BuiltIn:
 
 # Define a Python function Studentent(). Using function attributes display the names of all arguments.
 class Student:
-    def Studentent(id, name, school, classroom):
+    def Student(id, name, school, classroom):
         return f'{name}\'s Studentent id is {id}. He Studenties in {school} and he belongs to {classroom}.'
     
-    print(Studentent('D3638', 'Kingston', 'Imperial London College', 'F4T01A'))
+    print(Student('D3638', 'Kingston', 'Imperial London College', 'F4T01A'))
 
 # 6. Write a Python function Studentent_data () which will print the id of a Studentent (Studentent_id). If the user passes an argument Studentent_name or 
-# Studentent_class the function will print the Studentent name and class
-# !!!!DEBUG REQUIRED
+# Student_class the function will print the Studentent name and class
 class Kwargs:
-    def Studentent_data(id, **kwargs):
-        sentence = f'Studentent ID: {id}'
+    def Student_data(id, **kwargs):
+        print(f'\nStudent ID: {id}')
         if 'name' in kwargs:
-            return sentence.join(f"\nStudentent Name: ${kwargs['name']}")
+            print(f"\nStudent Name: {kwargs['name']}")
         if 'age' in kwargs:
-            return sentence.join(f"\nStudentent Age: ${kwargs['age']}")
+            print(f"\nStudent Age:  {kwargs['age']}")
 
-        return sentence
-    print(Studentent_data('D3727', name='JK Rowling', age='16'))
+    Student_data('D3638', name='JK Rowling', age= '12')
 
 # Write a simple Python class named Studentent and display its type. Also, display the 
 # __dict__ attribute keys and the value of the __module__ attribute of the Studentent class
 class Student(Student):
     print(type(Student), Student.__dict__.keys(), Student.__module__)
+
+# Write a Python program to crate two empty classes, Student and Marks. Now create some 
+# instances and check whether they are instances of the said classes or not. 
+# Also, check whether the said classes are subclasses of the built-in object class 
+# or not.
+
+student1= Student()
+class Marks:
+    pass
+marks = Marks()
+print(isinstance(marks, Marks))
+print(isinstance(student1, Marks))
+print(isinstance(marks, Student))
+print(isinstance(student1, Student))
+print('\nto check whether the said classes are the subclasses of the built in object class or not')
+print(issubclass(Student, object))
+print(issubclass(Marks, object))
     
