@@ -10,7 +10,7 @@ class Node:
     def insert(self, data):
         if self.data == None:
             self.data = data
-        else:
+        else: 
             if data
 
 def sum_roots(root):
